@@ -1,13 +1,8 @@
 import streamlit as st
 import google.generativeai as genai
-import os
-
-
-api_key = st.secrets["general"]["google_api_key"]
-
 
 # Configure the API key
-genai.configure(api_key=api_key)
+genai.configure(api_key="AIzaSyC1ui5nqvoq6k-st54F_vtrXJgIuRI1opo")  # Replace with your valid API key
 
 # System prompt for AI model
 system_prompt = """You are a helpful data science tutor. 
