@@ -3,13 +3,15 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 import os
 
+
+# Load environment variables from .env file
 load_dotenv()
 
 # Retrieve the API key from the environment variable
 api_key = os.getenv("GOOGLE_API_KEY")
 
 # Configure the API key
-genai.configure(api_key=api_key)  # Replace with your valid API key
+genai.configure(api_key=api_key)
 
 # System prompt for AI model
 system_prompt = """You are a helpful data science tutor. 
