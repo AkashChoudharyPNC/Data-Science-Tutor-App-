@@ -4,11 +4,8 @@ from dotenv import load_dotenv
 import os
 
 
-# Load environment variables from .env file
-load_dotenv()
+api_key = st.secrets["general"]["google_api_key"]
 
-# Retrieve the API key from the environment variable
-api_key = os.getenv("GOOGLE_API_KEY")
 
 # Configure the API key
 genai.configure(api_key=api_key)
