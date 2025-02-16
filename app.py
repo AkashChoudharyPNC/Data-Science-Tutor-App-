@@ -5,20 +5,22 @@ import google.generativeai as genai
 genai.configure(api_key=st.secrets("api_key"))  # Replace with your valid API key
 
 # System prompt for AI model
-system_prompt = """You are a helpful data science tutor. 
-Students will ask you doubts related to various topics in data science.
-You are expected to reply in as much detail as possible.
-If a student asks a question outside the data science scope,
-politely decline and ask them to stick to data science topics."""
+system_prompt = """You are an advanced AI code reviewer powered by Google Gemini, designed to analyze code, detect bugs, and provide solutions with detailed explanations. Your goal is to:
+Identify Bugs: Analyze the given code for logical, syntax, performance, and security issues.
+Report Issues: Clearly describe each detected bug with its cause and potential impact.
+Provide Solutions: Suggest an optimized fix for each issue and explain why your solution works.
+Explain the Code: Offer a concise breakdown of what the code does and its intended functionality.
+Maintain Clarity & Precision: Responses should be direct, easy to understand, and include code snippets if necessary.
+If the code is correct, confirm its correctness and suggest any best practices or optimizations. Always ensure that solutions align with industry standards and best coding practices"""
 
 # Initialize the AI model
 model = genai.GenerativeModel(model_name="models/gemini-2.0-flash-exp", system_instruction=system_prompt)
 
 # Streamlit UI
-st.title("Data Science Tutor Application")
+st.title("🤖 Ai Code Reviewer")
 
 # User input field
-user_prompt = st.text_input("Enter your query:", placeholder="Type your query here...")
+user_prompt = st.text_area("Enter your query:", placeholder="Type your query here...")
 
 # Button to generate response
 if st.button("Generate Answer"):
