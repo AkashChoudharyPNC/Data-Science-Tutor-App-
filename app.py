@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 
 # Configure the API key
-genai.configure(api_key="AIzaSyC1ui5nqvoq6k-st54F_vtrXJgIuRI1opo")  # Replace with your valid API key
+genai.configure(api_key=st.secrets("api_key"))  # Replace with your valid API key
 
 # System prompt for AI model
 system_prompt = """You are a helpful data science tutor. 
